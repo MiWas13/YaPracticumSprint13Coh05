@@ -10,7 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import ru.yandex.practicum.sprint13koh03.databinding.ActivityMainBinding
+import ru.yandex.practicum.sprint13koh05.R
+import ru.yandex.practicum.sprint13koh05.databinding.ActivityMainBinding
 import java.util.UUID
 
 class MainActivity : AppCompatActivity() {

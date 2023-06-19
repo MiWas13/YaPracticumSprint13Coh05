@@ -8,7 +8,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "ru.yandex.practicum.sprint13koh03"
+        applicationId "ru.yandex.practicum.sprint13koh05"
         minSdk 24
         targetSdk 33
         versionCode 1

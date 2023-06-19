@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import ru.yandex.practicum.sprint13koh03.databinding.VCatalogItemBinding
+import ru.yandex.practicum.sprint13koh05.databinding.VCatalogItemBinding
 
 data class CatalogItemViewData(
     val item: CatalogItem,

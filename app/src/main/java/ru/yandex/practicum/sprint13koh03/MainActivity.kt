@@ -120,7 +120,6 @@ class MainActivity : AppCompatActivity() {
                 catalogItemsAdapter.setItems(catalogItems)
             }
             onRemoveCountClickListener = OnRemoveCountClickListener { item ->
-
                 catalogItems = catalogItems.map {
                     if (it.id == item.id) {
                         val a = it.count ?: 0 - 1
@@ -179,6 +178,8 @@ class MainActivity : AppCompatActivity() {
                     } else {
                         it
                     }
+                }.filter {
+                    it.count > 0
                 }
                 cartItemsAdapter.setItems(cartItems)
                 checkVisibility()

@@ -35,10 +35,20 @@ class CatalogItemViewHolder(
         binding.title.text = viewData.item.name
         binding.price.text = "${viewData.item.price / 100}/${viewData.item.unit}"
 
-        if (viewData.count != null) {
-            binding.addToCart.visibility = View.GONE
-            binding.countContainer.visibility = View.VISIBLE
-            binding.count.text = viewData.count.toString()
+        when (viewData.count) {
+            null -> {
+                binding.addToCart.visibility = View.VISIBLE
+                binding.countContainer.visibility = View.GONE
+            }
+            0 -> {
+                binding.addToCart.visibility = View.VISIBLE
+                binding.countContainer.visibility = View.GONE
+            }
+            else -> {
+                binding.addToCart.visibility = View.GONE
+                binding.countContainer.visibility = View.VISIBLE
+                binding.count.text = viewData.count.toString()
+            }
         }
     }
 

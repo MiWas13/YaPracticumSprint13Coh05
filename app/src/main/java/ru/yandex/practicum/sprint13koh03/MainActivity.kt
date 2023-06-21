@@ -102,6 +102,7 @@ class MainActivity : AppCompatActivity() {
                             )
                         }
                         cartItemsAdapter.setItems(cartItems)
+                        checkVisibility()
                         it.copy(count = 1)
                     } else {
                         it
@@ -135,6 +136,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun checkVisibility(){
+        if (cartItems.isEmpty()) {
+            binding.cartEmptyTitle.visibility = View.VISIBLE
+        }
+        else{
+            binding.cartEmptyTitle.visibility = View.GONE
+        }
+    }
+
     private fun checkList(count: Int) {
         if (count < 1) {
             //Скрываем
@@ -149,6 +159,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         cartItemsAdapter.setItems(cartItems)
+        checkVisibility()
         
         with(cartItemsAdapter) {
             onAddCountClickListener = OnCartAddCountClickListener { item ->
@@ -160,6 +171,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
                 cartItemsAdapter.setItems(cartItems)
+                checkVisibility()
             }
             onRemoveCountClickListener = OnCartRemoveCountClickListener { item ->
                 cartItems = cartItems.map {
@@ -170,6 +182,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
                 cartItemsAdapter.setItems(cartItems)
+                checkVisibility()
             }
         }
     }
